@@ -1,0 +1,67 @@
+.section {
+  padding-block: 104px;
+}
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 64px 40px;
+  text-align: center;
+}
+
+.heading {
+  font-family: var(--fd);
+  font-size: 48px;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  max-width: 620px;
+  margin: 0 auto;
+  text-wrap: balance;
+}
+
+.lede {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--sub);
+  max-width: 520px;
+  margin: 18px auto 0;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.primary {
+  padding: 16px 30px;
+}
+
+.secondary {
+  padding: 16px 28px;
+}
+
+.fine {
+  font-family: var(--fm);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--sub);
+  margin-top: 22px;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding-block: 72px;
+  }
+
+  .panel {
+    padding: 48px 24px;
+  }
+
+  .heading {
+    font-size: 34px;
+  }
+}

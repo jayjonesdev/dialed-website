@@ -1,0 +1,36 @@
+/*
+ * Design tokens — source of truth is the handoff token table.
+ * The prototype exposed `--accent` as a runtime knob; in production it is
+ * hard-coded, because the app screenshots have this blue baked into their
+ * pixels and would desync if the token moved.
+ */
+:root {
+  --bg: #f4ede1;
+  --card: #fcf7ee;
+  --ink: #2d2115;
+  --sub: #8d7c68;
+  --line: #e3d7c2;
+  --accent: #4a6b8a;
+  --soft: color-mix(in srgb, var(--accent) 13%, #fbf6ec);
+  --onacc: #fffaf3;
+  --warn: #a63a26;
+
+  /* Dark band (sharing section) */
+  --dark-surface: #241a10;
+  --dark-line: rgba(244, 237, 225, 0.18);
+  --dark-line-strong: rgba(244, 237, 225, 0.16);
+  --dark-rule: rgba(244, 237, 225, 0.22);
+
+  /* Families */
+  --fd: 'Lora', Georgia, serif;
+  --fm: 'IBM Plex Mono', ui-monospace, monospace;
+  --fb: -apple-system, system-ui, 'Helvetica Neue', sans-serif;
+
+  /* Layout */
+  --content: 1160px;
+  --content-narrow: 820px;
+  --gutter: 28px;
+  --nav-height: 72px;
+
+  --transition: 140ms ease;
+}

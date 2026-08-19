@@ -1,0 +1,13 @@
+/*
+ * Self-hosted via @fontsource (both faces are SIL OFL), latin subsets only.
+ * Lora carries every heading, price and the wordmark; IBM Plex Mono carries
+ * eyebrows, nav links, metrics and fine print.
+ */
+@import '@fontsource/lora/latin-400.css';
+@import '@fontsource/lora/latin-500.css';
+@import '@fontsource/lora/latin-600.css';
+@import '@fontsource/lora/latin-700.css';
+
+@import '@fontsource/ibm-plex-mono/latin-400.css';
+@import '@fontsource/ibm-plex-mono/latin-500.css';
+@import '@fontsource/ibm-plex-mono/latin-600.css';

@@ -1,0 +1,172 @@
+.section {
+  padding-top: 96px;
+}
+
+.header {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-family: var(--fd);
+  font-size: 44px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.lede {
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--sub);
+  margin-top: 16px;
+}
+
+.toggleWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.toggle {
+  display: flex;
+  background: var(--soft);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 2px;
+}
+
+.toggleButton {
+  border: none;
+  border-radius: 999px;
+  padding: 9px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  color: var(--sub);
+  transition: background var(--transition), color var(--transition);
+}
+
+.toggleButtonActive {
+  background: var(--card);
+  color: var(--ink);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: var(--content-narrow);
+  margin: 26px auto 0;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 28px 26px;
+}
+
+.cardPlus {
+  border: 1.5px solid var(--accent);
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -11px;
+  left: 26px;
+  font-family: var(--fm);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  background: var(--accent);
+  color: var(--onacc);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.tier {
+  font-family: var(--fm);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  color: var(--sub);
+}
+
+.tierPlus {
+  color: var(--accent);
+}
+
+.price {
+  font-family: var(--fd);
+  font-size: 38px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.per {
+  font-size: 16px;
+  color: var(--sub);
+  font-family: var(--fb);
+  font-weight: 400;
+}
+
+.blurb {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--sub);
+  margin-top: 8px;
+}
+
+.perks {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 22px 0 0;
+  padding: 20px 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.perk {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.check {
+  color: var(--accent);
+  flex: none;
+}
+
+.cta {
+  margin-top: 24px;
+}
+
+.fine {
+  font-family: var(--fm);
+  font-size: 10.5px;
+  color: var(--sub);
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding-top: 64px;
+  }
+
+  .heading {
+    font-size: 34px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .badge {
+    left: 20px;
+  }
+}

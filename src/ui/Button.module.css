@@ -1,0 +1,58 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 16px 26px;
+  cursor: pointer;
+  transition: opacity var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.accent {
+  background: var(--accent);
+  color: var(--onacc);
+  font-weight: 700;
+  padding: 16px 28px;
+}
+
+.accent:hover {
+  opacity: 0.9;
+}
+
+.outline {
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.outline:hover {
+  border-color: var(--sub);
+}
+
+/* Outlined buttons pick up whichever surface they do *not* sit on. */
+.onPage {
+  background: var(--card);
+}
+
+.onCard {
+  background: var(--bg);
+}
+
+/* Nav CTA */
+.small {
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 11px 20px;
+}
+
+/* Pricing card CTAs: full width, softer radius. */
+.block {
+  display: block;
+  width: 100%;
+  text-align: center;
+  border-radius: 14px;
+  font-size: 14.5px;
+  padding: 14px;
+}

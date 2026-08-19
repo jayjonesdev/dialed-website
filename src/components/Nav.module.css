@@ -1,0 +1,55 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+
+.inner {
+  padding-block: 16px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.wordmark {
+  font-family: var(--fd);
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.links {
+  display: flex;
+  gap: 26px;
+  margin-left: 12px;
+}
+
+.link {
+  font-family: var(--fm);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--sub);
+  transition: color var(--transition);
+}
+
+.link:hover {
+  color: var(--ink);
+}
+
+.spacer {
+  flex: 1;
+}
+
+@media (max-width: 720px) {
+  .links {
+    display: none;
+  }
+
+  .inner {
+    gap: 16px;
+  }
+}

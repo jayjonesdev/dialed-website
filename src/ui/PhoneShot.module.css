@@ -1,0 +1,30 @@
+/*
+ * Screenshot column: the top of the screen is shown and the bottom fades out.
+ * No shadow — deliberate, per the handoff.
+ */
+.frame {
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  mask-image: linear-gradient(to bottom, #000 82%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent);
+}
+
+.image {
+  width: 306px;
+  height: auto;
+  align-self: flex-start;
+  border-radius: 29px;
+  border: 1px solid var(--line);
+}
+
+@media (max-width: 900px) {
+  .frame {
+    height: 420px;
+  }
+
+  .image {
+    width: 272px;
+  }
+}

@@ -1,0 +1,120 @@
+.hero {
+  padding-top: 76px;
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.heading {
+  font-family: var(--fd);
+  font-size: 68px;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.lede {
+  font-size: 17.5px;
+  line-height: 1.6;
+  color: var(--sub);
+  max-width: 520px;
+  margin-top: 22px;
+  text-wrap: pretty;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.fine {
+  font-family: var(--fm);
+  font-size: 11.5px;
+  color: var(--sub);
+  margin-top: 20px;
+  line-height: 1.7;
+}
+
+/*
+ * Two overlapping screenshots that fade out into the method strip below.
+ * Positions are absolute so the pair keeps its exact overlap.
+ */
+.shots {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, #000 76%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, #000 76%, transparent);
+}
+
+.back,
+.front {
+  position: absolute;
+  border: 1px solid var(--line);
+}
+
+.back {
+  right: 10px;
+  top: 56px;
+  width: 236px;
+  border-radius: 23px;
+}
+
+.front {
+  left: 2px;
+  top: 0;
+  width: 296px;
+  border-radius: 28px;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-top: 56px;
+  }
+
+  .heading {
+    font-size: 42px;
+  }
+
+  .lede {
+    font-size: 16.5px;
+  }
+
+  .shots {
+    height: 520px;
+  }
+
+  .front {
+    left: 50%;
+    transform: translateX(-58%);
+  }
+
+  .back {
+    right: 50%;
+    transform: translateX(58%);
+  }
+}
+
+@media (max-width: 560px) {
+  .heading {
+    font-size: 36px;
+  }
+
+  .shots {
+    height: 420px;
+  }
+
+  .front {
+    width: 240px;
+  }
+
+  .back {
+    width: 190px;
+    top: 44px;
+  }
+}

@@ -1,0 +1,142 @@
+.band {
+  border-top: 1px solid var(--line);
+  background: var(--card);
+}
+
+.inner {
+  padding-block: 88px;
+}
+
+.header {
+  max-width: 640px;
+}
+
+.heading {
+  font-family: var(--fd);
+  font-size: 42px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.lede {
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--sub);
+  margin-top: 18px;
+  text-wrap: pretty;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 24px 22px;
+}
+
+.cardEyebrow {
+  font-family: var(--fm);
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+
+.cardHeading {
+  font-family: var(--fd);
+  font-size: 23px;
+  line-height: 1.2;
+  margin-top: 12px;
+}
+
+.cardBody {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--sub);
+  margin-top: 10px;
+  text-wrap: pretty;
+}
+
+.footerBox {
+  font-family: var(--fm);
+  font-size: 11.5px;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+.footerBoxSecondary {
+  color: var(--sub);
+}
+
+.dialing {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-top: 16px;
+}
+
+.dialingLabel {
+  font-family: var(--fm);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+
+.dialingValue {
+  font-family: var(--fm);
+  font-size: 11.5px;
+  color: var(--sub);
+  margin-left: auto;
+}
+
+.note {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--sub);
+  margin-top: 12px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.chip {
+  font-family: var(--fm);
+  font-size: 10.5px;
+  color: var(--sub);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 11px;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    padding-block: 64px;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
