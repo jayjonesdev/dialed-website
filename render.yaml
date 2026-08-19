@@ -1,0 +1,41 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+#
+# Render only reads this file for Blueprint-managed services. A static site
+# created by hand in the dashboard keeps using its dashboard settings, so
+# editing this file will not change that service. To adopt it, create the
+# service from this Blueprint (New > Blueprint), or sync the existing one.
+#
+# The equivalent dashboard settings are:
+#   Build Command      npm run build
+#   Publish Directory  dist
+services:
+  - type: web
+    name: dialed-website
+    runtime: static
+    # Render installs dependencies (including devDependencies, which is where
+    # vite and typescript live) before running this.
+    buildCommand: npm run build
+    staticPublishPath: ./dist
+    envVars:
+      # Vite 8 needs Node 20.19+ / 22.12+. Pinned so a change to Render's
+      # default runtime can't break the build.
+      - key: NODE_VERSION
+        value: "22"
+    headers:
+      # Vite fingerprints every filename under /assets, so they can be cached
+      # indefinitely; a content change produces a new URL.
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+    # No SPA rewrite: this is one static page with same-page anchors and no
+    # client-side router, so an unknown path should 404 rather than serve
+    # index.html.

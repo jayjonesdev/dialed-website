@@ -67,6 +67,24 @@ The 1px total difference is the pricing toggle: this build sets `button { font: 
 so the toggle uses the site's body font, where the prototype left buttons on the
 browser's default button font. That makes it 0.5px shorter per button.
 
+## Deployment
+
+Static output, no server. Build with `npm run build` and serve `dist/`.
+
+`render.yaml` holds the Render configuration: build command, publish directory,
+a pinned `NODE_VERSION` (Vite 8 needs Node 20.19+ / 22.12+), long-lived cache
+headers for the fingerprinted files under `/assets`, and a few security headers.
+
+Render only reads that file for **Blueprint-managed** services. A static site
+created by hand in the dashboard keeps using its dashboard settings, so it has to
+be configured there instead — Build Command `npm run build`, Publish Directory
+`dist`. Getting either one wrong fails the deploy with
+`Publish directory dist does not exist!`.
+
+There is deliberately no SPA rewrite rule. This is one static page with same-page
+anchors and no client-side router, so an unknown path should 404 rather than
+serve `index.html`.
+
 ## Before shipping
 
 - **Wire the buttons.** `links` at the top of `src/content/site.ts` is the single
