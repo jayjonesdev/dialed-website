@@ -8,6 +8,7 @@
   font-weight: 600;
   padding: 16px 26px;
   cursor: pointer;
+  white-space: nowrap;
   transition: opacity var(--transition), border-color var(--transition), color var(--transition);
 }
 
@@ -40,11 +41,31 @@
   background: var(--bg);
 }
 
-/* Nav CTA */
+/* Nav actions */
 .small {
   font-size: 13.5px;
   font-weight: 700;
   padding: 11px 20px;
+}
+
+/*
+ * Absorb the 1px border so an outlined nav pill is the same height as the
+ * accent one beside it — otherwise the nav grows past --nav-height and every
+ * anchor lands underneath it.
+ */
+.outline.small {
+  padding: 10px 19px;
+}
+
+/* Both nav pills tighten up before they'd wrap on very narrow screens. */
+@media (max-width: 400px) {
+  .small {
+    padding-inline: 13px;
+  }
+
+  .outline.small {
+    padding-inline: 12px;
+  }
 }
 
 /* Pricing card CTAs: full width, softer radius. */

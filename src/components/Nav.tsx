@@ -18,9 +18,14 @@ export function Nav() {
           ))}
         </nav>
         <div className={styles.spacer} />
-        <Button href={links.appStore} size="small">
-          Get the app
-        </Button>
+        <div className={styles.actions}>
+          <Button href={links.login} variant="outline" size="small">
+            Log in
+          </Button>
+          <Button href={links.appStore} size="small">
+            Get the app
+          </Button>
+        </div>
       </Container>
     </header>
   )

@@ -10,6 +10,7 @@ import appGear from '../assets/app-gear-blue.png'
  */
 export const links = {
   appStore: '#get',
+  login: 'https://dialinyour.coffee',
   androidWaitlist: '#get',
   contact: '#get',
   changelog: '#get',
