@@ -51,6 +51,58 @@
   gap: 10px;
 }
 
+/* Shown only below the breakpoint, where the section links collapse. */
+.menuButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+
+.menuButton:hover {
+  border-color: var(--sub);
+}
+
+/* The translucent bar would let page content show through above the solid
+   panel, so it goes opaque while the menu is open. */
+.navOpen {
+  background: var(--bg);
+}
+
+.menu {
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  padding-block: 4px 12px;
+}
+
+.menuLink {
+  display: block;
+  font-family: var(--fm);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--sub);
+  padding-block: 15px;
+  border-bottom: 1px solid var(--line);
+  transition: color var(--transition);
+}
+
+.menuLink:last-child {
+  border-bottom: none;
+  color: var(--ink);
+}
+
+.menuLink:hover {
+  color: var(--ink);
+}
+
 @media (max-width: 720px) {
   .links {
     display: none;
@@ -62,5 +114,21 @@
 
   .actions {
     gap: 8px;
+  }
+
+  .menuButton {
+    display: inline-flex;
+  }
+
+  /* Matches the 44px controls beside it, so the bar height is unchanged. */
+  .wordmark {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  /* Log in moves into the panel so the bar keeps room for the primary CTA. */
+  .loginPill {
+    display: none;
   }
 }

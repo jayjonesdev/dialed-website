@@ -45,8 +45,14 @@ desync the mockups.
 - AI cards go 3 → 1 column at 900px; pricing cards stack; the FAQ answer loses its
   right indent at 560px; the share-card parameter table goes single-column at 560px.
 - Hero H1 68 → 42 → 36px; section H2s 40–48 → ~32px.
-- Nav links hide below 720px, leaving the wordmark and the CTA. There is no mobile
-  menu — the same links are all in the footer.
+- Below 720px the section links collapse into a menu behind a button in the nav,
+  which also holds Log in (the login pill leaves the bar so the primary CTA keeps
+  its room). The panel closes on Escape, on picking a link, and on growing past
+  the breakpoint.
+- Touch targets are 44px on mobile: nav controls, the pricing toggle, the menu
+  panel rows and the footer links, which are only 16px tall at desktop sizes.
+- `--nav-height` moves to 77px below 720px, since the bar grows with those
+  targets. Anchor `scroll-margin-top` reads the token, so it tracks automatically.
 - The 28px gutter is kept at every width.
 
 **Accessibility additions** (none were specified): `aria-expanded`/`aria-controls`

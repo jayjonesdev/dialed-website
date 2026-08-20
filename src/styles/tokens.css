@@ -34,3 +34,10 @@
 
   --transition: 140ms ease;
 }
+
+/* The mobile bar is taller because its controls grow to 44px touch targets. */
+@media (max-width: 720px) {
+  :root {
+    --nav-height: 77px;
+  }
+}

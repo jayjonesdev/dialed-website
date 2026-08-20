@@ -57,6 +57,17 @@
   padding: 10px 19px;
 }
 
+/* Nav pills meet the 44px touch guideline on mobile. */
+@media (max-width: 720px) {
+  .small {
+    padding-block: 14px;
+  }
+
+  .outline.small {
+    padding-block: 13px;
+  }
+}
+
 /* Both nav pills tighten up before they'd wrap on very narrow screens. */
 @media (max-width: 400px) {
   .small {

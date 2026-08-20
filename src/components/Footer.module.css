@@ -68,6 +68,22 @@
   color: var(--sub);
 }
 
+@media (max-width: 720px) {
+  /* Padding replaces the gap so the rows keep their rhythm while each link
+     becomes a 44px touch target. */
+  .column {
+    gap: 0;
+  }
+
+  .link {
+    padding-block: 14px;
+  }
+
+  .columnHeading {
+    padding-bottom: 8px;
+  }
+}
+
 @media (max-width: 560px) {
   .columns {
     gap: 28px;

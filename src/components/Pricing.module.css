@@ -169,4 +169,8 @@
   .badge {
     left: 20px;
   }
+
+  .toggleButton {
+    padding-block: 15px;
+  }
 }
