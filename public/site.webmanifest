@@ -1,0 +1,13 @@
+{
+  "name": "Dialed",
+  "short_name": "Dialed",
+  "description": "Coffee recipes, brew log, beans and gear.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f4ede1",
+  "theme_color": "#f4ede1",
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}

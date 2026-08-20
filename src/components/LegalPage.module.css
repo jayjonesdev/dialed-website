@@ -1,0 +1,136 @@
+/* A reading measure narrower than the site's 820px content column. */
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 72px var(--gutter) 96px;
+}
+
+.title {
+  font-family: var(--fd);
+  font-size: 44px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.updated {
+  font-family: var(--fm);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--sub);
+  margin-top: 14px;
+  text-transform: uppercase;
+}
+
+.intro {
+  font-size: 17.5px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin-top: 26px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--line);
+  text-wrap: pretty;
+}
+
+.section {
+  margin-top: 38px;
+}
+
+.heading {
+  font-family: var(--fd);
+  font-size: 23px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+/* Body copy for the documents: same voice as a section lede on the homepage. */
+.body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--sub);
+  margin-top: 12px;
+  text-wrap: pretty;
+}
+
+.body p + p {
+  margin-top: 12px;
+}
+
+.body strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.body a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  transition: color var(--transition);
+}
+
+.body a:hover {
+  color: var(--ink);
+}
+
+.body ul {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.body li {
+  position: relative;
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+/* Mono bullet, matching the eyebrow language rather than a browser disc. */
+.body li::before {
+  content: '·';
+  position: absolute;
+  left: 6px;
+  color: var(--accent);
+  font-family: var(--fm);
+}
+
+.foot {
+  margin-top: 56px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  font-family: var(--fm);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--sub);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  text-transform: uppercase;
+}
+
+.foot a {
+  color: var(--sub);
+  transition: color var(--transition);
+}
+
+.foot a:hover {
+  color: var(--accent);
+}
+
+.sep {
+  color: var(--line);
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding-top: 48px;
+    padding-bottom: 72px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .intro {
+    font-size: 16.5px;
+  }
+}

@@ -4,26 +4,47 @@ import appDetail from '../assets/app-detail-blue.png'
 import appBeans from '../assets/app-beans-blue.png'
 import appGear from '../assets/app-gear-blue.png'
 
+export const siteUrl = 'https://dialinyour.coffee'
+
+export const meta = {
+  title: 'Dialed — Every cup you dialed in, written down.',
+  description:
+    'Dialed keeps your coffee recipes, beans, gear and every brew you log in one place: dose, grind, water, time and how it actually tasted. Free on iPhone.',
+}
+
+/** Reachable contact, which Apple requires on the privacy policy. */
+export const supportEmail = 'jayjonesdevelopment@gmail.com'
+
 /*
- * Outbound destinations. The prototype left every button pointing at #get;
- * swap these for the real App Store listing and waitlist when they exist.
+ * Outbound destinations. The App Store listing and Android waitlist are still
+ * unwired and point at the closing CTA; swap them when they exist.
  */
 export const links = {
-  appStore: '#get',
+  appStore: '/#get',
   login: 'https://dialinyour.coffee',
-  androidWaitlist: '#get',
-  contact: '#get',
-  changelog: '#get',
-  privacy: '#get',
-  terms: '#get',
+  androidWaitlist: '/#get',
+  contact: `mailto:${supportEmail}`,
+  changelog: '/#get',
+  privacy: '/privacy/',
+  terms: '/terms/',
 } as const
 
+/*
+ * Governing law for the terms. The backend omits this clause entirely when
+ * LEGAL_JURISDICTION is unset; naming a state rather than a city because
+ * contract law is supplied at state level.
+ */
+export const legalJurisdiction = 'the State of Illinois, USA'
+
+/** Bump when the substance of either legal document changes. */
+export const legalLastUpdated = '19 August 2026'
+
 export const nav = [
-  { label: 'FEATURES', href: '#features' },
-  { label: 'AI', href: '#ai' },
-  { label: 'SHARING', href: '#sharing' },
-  { label: 'PRICING', href: '#pricing' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'FEATURES', href: '/#features' },
+  { label: 'AI', href: '/#ai' },
+  { label: 'SHARING', href: '/#sharing' },
+  { label: 'PRICING', href: '/#pricing' },
+  { label: 'FAQ', href: '/#faq' },
 ]
 
 export const hero = {
@@ -285,16 +306,16 @@ export const footer = {
     {
       heading: 'APP',
       links: [
-        { label: 'Features', href: '#features' },
-        { label: 'Pricing', href: '#pricing' },
-        { label: 'AI features', href: '#ai' },
-        { label: 'Sharing', href: '#sharing' },
+        { label: 'Features', href: '/#features' },
+        { label: 'Pricing', href: '/#pricing' },
+        { label: 'AI features', href: '/#ai' },
+        { label: 'Sharing', href: '/#sharing' },
       ],
     },
     {
       heading: 'SUPPORT',
       links: [
-        { label: 'FAQ', href: '#faq' },
+        { label: 'FAQ', href: '/#faq' },
         { label: 'Contact', href: links.contact },
         { label: 'Changelog', href: links.changelog },
       ],

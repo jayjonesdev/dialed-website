@@ -45,7 +45,7 @@ export function Nav() {
   return (
     <header className={cx(styles.nav, menuOpen && styles.navOpen)}>
       <Container className={styles.inner}>
-        <a href="#top" className={styles.wordmark}>
+        <a href="/" className={styles.wordmark}>
           Dialed
         </a>
         <nav className={styles.links} aria-label="Sections">

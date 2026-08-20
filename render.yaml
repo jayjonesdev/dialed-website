@@ -36,6 +36,14 @@ services:
       - path: /*
         name: X-Frame-Options
         value: SAMEORIGIN
-    # No SPA rewrite: this is one static page with same-page anchors and no
-    # client-side router, so an unknown path should 404 rather than serve
-    # index.html.
+    routes:
+      # The legal pages build to privacy/index.html and terms/index.html, so the
+      # extensionless URLs only resolve if the host does directory indexes.
+      # These make them explicit. Not an SPA catch-all: an unknown path should
+      # still 404 rather than serve index.html.
+      - type: rewrite
+        source: /privacy
+        destination: /privacy/index.html
+      - type: rewrite
+        source: /terms
+        destination: /terms/index.html

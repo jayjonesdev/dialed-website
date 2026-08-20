@@ -13,7 +13,7 @@ export function Hero() {
         <p className={styles.lede}>{hero.lede}</p>
         <div className={styles.actions}>
           <Button href={links.appStore}>Download for iPhone</Button>
-          <Button href="#features" variant="outline">
+          <Button href="/#features" variant="outline">
             See how it works
           </Button>
         </div>

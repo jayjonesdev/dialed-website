@@ -73,6 +73,63 @@ The 1px total difference is the pricing toggle: this build sets `button { font: 
 so the toggle uses the site's body font, where the prototype left buttons on the
 browser's default button font. That makes it 0.5px shorter per button.
 
+## Pages
+
+Three pages, built as separate entry points rather than behind a router, so each
+is a real file the host serves directly:
+
+| URL | Entry | Content |
+|---|---|---|
+| `/` | `src/main.tsx` | the marketing homepage |
+| `/privacy/` | `src/privacy.tsx` | Privacy Policy |
+| `/terms/` | `src/terms.tsx` | Terms of Use |
+
+Links use the **trailing slash** (`/privacy/`), which resolves to the directory's
+`index.html` on any static host. The bare `/privacy` only works where the host
+does directory indexes; `render.yaml` rewrites it explicitly for that reason.
+
+`appType: 'mpa'` is set so dev and preview stop rewriting unknown paths to
+`index.html` — without it they hide the real routing and every URL looks fine
+locally while 404ing in production.
+
+### Legal copy
+
+`src/content/legal.tsx` carries the Privacy Policy and Terms of Use. **The
+wording came from `dialed-backend` (`src/services/legal.ts`, on branch
+`fix/app-store-blockers`)**, which wrote it from what the API actually does.
+Substance is unchanged here; only the markup and styling were adapted. That
+means the same text now exists in two repos — if one changes, change both.
+
+It is a faithful description of the data flows, **not legal advice**. Have it
+reviewed before submission.
+
+Three values in `src/content/site.ts` feed it, standing in for the backend's
+environment variables: `supportEmail` (the backend leaves `SUPPORT_EMAIL` unset
+and falls back to pointing at the App Store listing), `legalJurisdiction` (unset
+in the backend, so its page carries no governing-law clause at all), and
+`legalLastUpdated` — bump that when the substance changes.
+
+## Link previews
+
+Each page carries its own Open Graph and Twitter card tags plus a canonical URL,
+built from `siteUrl` in `src/content/site.ts`. The preview is **text-only by
+design**: there is no `og:image`, so platforms render the title and description
+against the favicon rather than a hero image. Adding one later means an image at
+1200×630 and an `og:image` tag per page.
+
+## Icons
+
+`public/` holds `favicon.ico` (16/32/48), `favicon-32.png`,
+`apple-touch-icon.png` (180), and `icon-192/512.png` for the web manifest. All
+are generated from `dialed-ios`'s app icon
+(`Dialed/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png`) — the
+two-bean mark, flattened onto its own paper `#F4EDE1`, which is also this site's
+`--bg`. Regenerate them from that source if the app icon changes.
+
+Note the mark is the app's terracotta `#B0521F`, not the site's blue `--accent`.
+That is intentional: it matches the App Store listing, which is what people
+recognise.
+
 ## Deployment
 
 Static output, no server. Build with `npm run build` and serve `dist/`.
